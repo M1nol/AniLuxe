@@ -3,36 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мій Простий Сайт</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>AniLuxe - Так звучить аніме</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <header>
-        <h1>Ласкаво просимо на Мій Сайт</h1>
-    </header>
-    
-    <nav>
+<body id="mainBody">
+   
+    <nav class="logo">
+        <a href="index.html" class="image-button">
+            <img id="logoImage" src="img/light-logo.png" alt="AniLuxe">
+        </a>
+    </nav>
+    <nav class="menu">
         <ul>
-            <li><a href="#">Головна</a></li>
-            <li><a href="#">Про нас</a></li>
-            <li><a href="#">Контакти</a></li>
+            <a href="index.html">Головна</a>
+            <a  href="anime.html" class="anime">жанри</a>
+            
+            <a href="#">Каталог</a>
         </ul>
     </nav>
-    
-    <main>
-        <section>
-            <h2>Розділ 1</h2>
-            <p>Це перший розділ мого сайту. Тут може бути яка-небудь інформація.</p>
-        </section>
-        
-        <section>
-            <h2>Розділ 2</h2>
-            <p>Це другий розділ мого сайту. Тут може бути інша цікава інформація.</p>
-        </section>
-    </main>
+
+    <form class="search-form" onsubmit="searchFunction()">
+        <input type="text" id="searchInput" placeholder="Пошук аніме...">
+        <button type="submit">Пошук</button>
+    </form>
+
+    <nav class="menu2">
+        <ul>
+            <a href="#">Login</a>
+        </ul>
+    </nav>
+    <!-- Оновлений HTML -->
+<main>
+    <div class="scroll-container">
+        <div class="topnew">
+            <a href="#">TOP NEW</a>
+            <div class="scroll-images" id="topNewScroll">
+                    <a href="#"><img src="img/image (1).jpg" alt="Image 1"></a>
+                    <a href="#"><img src="img/image (2).jpg" alt="Image 2"></a>
+                    <a href="#"><img src="img/image (3).jpg" alt="Image 3"></a>
+                    <a href="#"><img src="img/image (4).jpg" alt="Image 4"></a>
+                    <a href="#"><img src="img/image (5).jpg" alt="Image 5"></a>
+                    <a href="#"><img src="img/image (6).jpg" alt="Image 6"></a>
+                    <a href="#"><img src="img/image (7).jpg" alt="Image 1"></a>
+                    <a href="#"><img src="img/image (8).jpg" alt="Image 2"></a>
+                    <a href="#"><img src="img/image (9).jpg" alt="Image 3"></a>
+                    <a href="#"><img src="img/image (10).jpg" alt="Image 4"></a>
+                    <a href="#"><img src="img/image (11).jpg" alt="Image 5"></a>
+                    <a href="#"><img src="img/image (12).jpg" alt="Image 6"></a>
+                    <a href="#"><img src="img/image (13).jpg" alt="Image 1"></a>
+                    <a href="#"><img src="img/image (14).jpg" alt="Image 2"></a>
+            </div>
+            <button class="left" onclick="scrollLeft('topNewScroll')">←</button>
+            <button class="right" onclick="scrollRight('topNewScroll')">→</button>
+        </div>
+        <div class="last-upd">
+            <a href="#">last upd</a>
+            <div class="scroll-images" id="lastUpdScroll">
+                <a href="#"><img src="img/image (6).jpg" alt="Image 1"></a>
+                <a href="#"><img src="img/image (4).jpg" alt="Image 2"></a>
+                <a href="#"><img src="img/image (3).jpg" alt="Image 3"></a>
+                <a href="#"><img src="img/image (2).jpg" alt="Image 4"></a>
+                <a href="#"><img src="img/image (5).jpg" alt="Image 5"></a>
+                <a href="#"><img src="img/image (1).jpg" alt="Image 6"></a>
+                <a href="#"><img src="img/image (7).jpg" alt="Image 1"></a>
+                <a href="#"><img src="img/image (8).jpg" alt="Image 2"></a>
+                <a href="#"><img src="img/image (9).jpg" alt="Image 3"></a>
+                <a href="#"><img src="img/image (10).jpg" alt="Image 4"></a>
+                <a href="#"><img src="img/image (11).jpg" alt="Image 5"></a>
+                <a href="#"><img src="img/image (12).jpg" alt="Image 6"></a>
+                <a href="#"><img src="img/image (13).jpg" alt="Image 1"></a>
+                <a href="#"><img src="img/image (14).jpg" alt="Image 2"></a>
+            </div>
+            <button class="left" onclick="scrollLeft('lastUpdScroll')">←</button>
+            <button class="right" onclick="scrollRight('lastUpdScroll')">→</button>
+        </div>
+    </div>
+</main>
+
     
     <footer>
-        <p>&copy; 2023 Мій Сайт. Усі права захищено.</p>
+        
+        <p>&copy; 2023 AniLuxe. Усі права захищено.</p>
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <span class="theme-icon" id="sun">&#9728;</span>
+        <span class="theme-icon" id="moon">&#9790;</span>
+    </button>
     </footer>
+    
+      
+
+    <script src="js/styles.js"></script>
 </body>
 </html>
