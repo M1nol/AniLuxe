@@ -12,36 +12,16 @@ function toggleTheme() {
 }
 
 
-function scrollLeft(containerId) {
-    const container = document.getElementById(containerId);
-    container.scrollLeft -= 150; // Регулюйте значення для швидкості прокрутки
-}
+let horizontScroll = document.querySelector('.container');
+let leftBtn = document.getElementById('leftBtn'); // Змінено 'leftBth' на 'leftBtn'
+let rightBtn = document.getElementById('rightBtn');
 
-function scrollRight(containerId) {
-    const container = document.getElementById(containerId);
-    container.scrollLeft += 150; // Регулюйте значення для швидкості прокрутки
-}
-
-// Визначення, коли кнопки мають вспливати
-document.addEventListener('DOMContentLoaded', function () {
-    const scrollContainers = document.querySelectorAll('.scroll-container');
-    
-    scrollContainers.forEach(container => {
-        container.addEventListener('mouseenter', () => showButtons(container));
-        container.addEventListener('mouseleave', () => hideButtons(container));
-    });
+rightBtn.addEventListener('click', () => {
+    horizontScroll.style.scrollBehavior = "smooth";
+    horizontScroll.scrollLeft += 600;
 });
 
-function showButtons(container) {
-    const buttons = container.querySelectorAll('button');
-    buttons.forEach(button => {
-        button.style.opacity = '1';
-    });
-}
-
-function hideButtons(container) {
-    const buttons = container.querySelectorAll('button');
-    buttons.forEach(button => {
-        button.style.opacity = '0';
-    });
-}
+leftBtn.addEventListener('click', () => {
+    horizontScroll.style.scrollBehavior = "smooth";
+    horizontScroll.scrollLeft -= 600;
+});

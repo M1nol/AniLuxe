@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniLuxe - Так звучить аніме</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body id="mainBody">
+   
+    <nav class="logo">
+        <a href="index.html" class="image-button">
+            <img id="logoImage" src="img/light-logo.png" alt="AniLuxe">
+        </a>
+    </nav>
+    <nav class="menu">
+        <ul>
+            <a href="index.html">Головна</a>
+            <a  href="anime.html" class="anime">жанри</a>
+            
+            <a href="#">Каталог</a>
+        </ul>
+    </nav>
+
+    <form class="search-form" onsubmit="searchFunction()">
+        <input type="text" id="searchInput" placeholder="Пошук аніме...">
+        <button type="submit">Пошук</button>
+    </form>
+
+    <nav class="menu2">
+        <ul>
+            <a href="#">Login</a>
+        </ul>
+    </nav>
+    <!-- Оновлений HTML -->
+<main>
+    <video class="player" id="player" playsinline controls data-poster="/path/to/poster.jpg">
+        <source src="video/Новый проект.mp4" type="video/mp4" />
+      
+        <!-- Captions are optional -->
+        <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default />
+      </video>
+</main>
+
+    
+    <footer>
+        
+        <p>&copy; 2023 AniLuxe. Усі права захищено.</p>
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <span class="theme-icon" id="sun">&#9728;</span>
+        <span class="theme-icon" id="moon">&#9790;</span>
+    </button>
+    </footer>
+    
+      
+
+    <script src="js/styles.js"> </script>
+</body>
+</html>
