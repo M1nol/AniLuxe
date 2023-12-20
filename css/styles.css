@@ -51,45 +51,131 @@ body:not(.dark-theme) #logoImage {
     transition: transform 0.3s ease;
 }
 
+/* Меню стилізація */
 .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #333;
-    color: #fff;
-    padding: 10px;
-    margin-top: -60px;
+    padding: 10px 0;
+
 }
 
-.menu a, .menu2 a {
+.menu ul {
+    margin-left: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 15px;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 10px 15px;
     color: #fff;
     text-decoration: none;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    position: relative;
+    transition: color 0.3s;
 }
 
-.menu a, .menu2 a:hover {
+.menu a:hover,
+.menu .active a {
+    color: #5900ff;
+}
+
+.menu a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px; 
+    background-color: #5900ff;
+    width: 0;
+    transition: width 0.3s;
+}
+
+.menu a:hover:after,
+.menu .active a:after {
+    width: 100%;
+}
+
+.menu .login {
+    background-color: #3498db;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Додаткове меню підпункту */
+.menu .anime {
+    position: relative;
+}
+
+.menu .additional-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #414141;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu .anime:hover .additional-menu {
+    display: block;
+}
+
+.menu .additional-menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px;
+    transition: background-color 0.3s;
+}
+
+.menu .additional-menu a:hover {
     background-color: #555;
 }
 
 .search-form {
-    margin: 10; /* Встановлення автоматичних зовнішніх меж для центрування */
-    position: absolute; /* Забезпечення фіксованого позиціювання */
-    top: 5px; /* Встановлення вертикального положення в центрі */
-    right: 0; /* Встановлення горизонтального положення в центрі */
-    transform: translate(-100%, 0%);
+    position: relative;
+    margin: 10px 0;
 }
 
-
-.search-form input,
-.search-form button {
+#searchInput {
     padding: 10px;
-    margin: 5px;
+    border: none;
     border-radius: 5px;
+    width: 200px; /* Змініть ширину за потребою */
 }
 
-.search-form button{
-    background-color: rgb(82, 82, 82);
+#searchInput:focus {
+    outline: none;
+    border: 2px solid #5900ff;
 }
+
+#searchInput::placeholder {
+    color: #aaa;
+}
+
+#searchButton {
+    background-color: #5900ff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #4700d4;
+}
+
 
 main {
     flex: 1; 
@@ -224,17 +310,33 @@ body.dark-theme button.theme-toggle:hover {
     margin: 10% auto;
 }
 
-.controls #rightBtn,  .controls #leftBtn{
-    width: 50px ;
+
+
+
+
+.controls #rightBtn, .controls #leftBtn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px;
+    margin: 5px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
     cursor: pointer;
-    margin: 30px;
+    opacity: 1; /* Початкова прозорість кнопок */
+    transition: opacity 0.3s ease; /* Плавна анімація зміни прозорості */
 }
 
-.image-con img{
-    height: auto;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
+button.left {
+    left: 0;
 }
-.image-con:hover img{
-    transform: scale(1.1);
+
+button.right {
+    right: 0;
 }
+
+
+
+

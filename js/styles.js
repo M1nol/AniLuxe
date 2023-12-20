@@ -25,3 +25,15 @@ leftBtn.addEventListener('click', () => {
     horizontScroll.style.scrollBehavior = "smooth";
     horizontScroll.scrollLeft -= 600;
 });
+
+
+
+// Додайте JavaScript для закриття вікна при кліку за межами нього
+document.addEventListener('click', function (event) {
+    var loginForm = document.getElementById('loginForm');
+    var loginLink = document.getElementById('loginLink');
+    
+    if (event.target !== loginForm && event.target !== loginLink) {
+        loginForm.style.display = 'none';
+    }
+});

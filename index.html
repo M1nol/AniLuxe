@@ -6,7 +6,8 @@
     <title>AniLuxe - Так звучить аніме</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body id="mainBody">
+<body id="mainBody" class="home-page">
+
    
     <nav class="logo">
         <a href="index.html" class="image-button">
@@ -17,16 +18,17 @@
         <ul>
             <a href="index.html">Головна</a>
             <a  href="anime.html" class="anime">жанри</a>
-            
             <a href="#">Каталог</a>
+            
+            <form class="search-form" onsubmit="searchFunction()">
+                 <input type="text" id="searchInput" placeholder="Пошук аніме...">
+                 <button type="submit">Пошук</button>
+           </form>
+
         </ul>
     </nav>
 
-    <form class="search-form" onsubmit="searchFunction()">
-        <input type="text" id="searchInput" placeholder="Пошук аніме...">
-        <button type="submit">Пошук</button>
-    </form>
-
+    
     <nav class="menu2">
         <ul>
             <a href="#">Login</a>
@@ -63,8 +65,9 @@
             </div>
         </div>
         <div class="controls">
-        <img src="img/left.png" alt="left" id="leftBtn">
-        <img src="img/right.png" alt="right" id="rightBtn">
+            <button class="left" id="leftBtn"><</button>
+            <button class="right"id="rightBtn">></button>
+
     </div>
     </div>
 </main>
